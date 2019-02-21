@@ -2,7 +2,8 @@ import { expect } from "chai";
 import { mount } from "@vue/test-utils";
 import Counter from "@/components/Counter.vue";
 
-describe("Counter.vue", () => {
+describe("Counter.vue", () => 
+{
     // 现在挂载组件，你便得到了这个包裹器
     const wrapper = mount(Counter);
     it("Renders the correct markup", () =>
@@ -19,5 +20,20 @@ describe("Counter.vue", () => {
         expect(wrapper.vm.count).to.equal(0);
         button.trigger("click");
         expect(wrapper.vm.count).to.equal(1);
+    });
+
+    it("computed_counter should be square", () =>
+    {
+        [
+            { squared: 3, equal: 9 },
+            { squared: 5, equal: 25 },
+            { squared: 10, equal: 100 },
+            // { squared: 93, equal: 1924 }
+        ].map( el =>
+        {
+            wrapper.setData({ squared: el.squared });
+            expect(wrapper.vm.computed_counter).to.equal(el.equal);
+        });
+        
     });
 });
