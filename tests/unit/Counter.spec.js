@@ -22,6 +22,23 @@ describe("Counter.vue", () =>
         expect(wrapper.vm.count).to.equal(1);
     });
 
+    it("computed_squared should be square", () =>
+    {
+        [
+            { squared: 3, equal: 9 },
+            { squared: 5, equal: 25 },
+            { squared: 10, equal: 100 },
+            { squared: "10", equal: 100 },
+            { squared: "Ninja", equal: null },
+            { squared: false, equal: null },
+            // { squared: 93, equal: 1924 } // wrong case
+        ].map( el =>
+        {
+            wrapper.setData({ squared: el.squared });
+            expect(wrapper.vm.computed_squared).to.equal(el.equal);
+        });
+    });
+
     it("computed_counter should be square", () =>
     {
         [
@@ -35,7 +52,7 @@ describe("Counter.vue", () =>
         ].map( el =>
         {
             wrapper.setData({ squared: el.squared });
-            expect(wrapper.vm.computed_counter).to.equal(el.equal);
+            expect(wrapper.vm.computed_squared).to.equal(el.equal);
         });
     });
 });

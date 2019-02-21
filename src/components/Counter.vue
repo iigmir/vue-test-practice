@@ -17,7 +17,7 @@ export default
     },
     computed:
     {
-        computed_counter()
+        computed_squared()
         {
             let result = parseInt( this.squared, 10 ) * parseInt( this.squared, 10 );
             return isNaN(result) ? null : result;
