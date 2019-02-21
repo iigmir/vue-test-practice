@@ -43,13 +43,8 @@ describe("Square part for Counter.vue", () =>
     });
 
     it("change_square should remain squared if input is not vaild number", () =>
-    {   // change_square should remain squared if input is not vaild number
-        [
-            "Ninja", false
-            // { squared: "10" },
-            // { squared: "Ninja" },
-            // { squared: false },
-        ].map( num =>
+    {
+        ["Ninja", false].map( num =>
         {
             let component = wrapper.vm;
             let old_value = 3;

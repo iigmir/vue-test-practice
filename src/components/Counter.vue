@@ -12,7 +12,8 @@ export default
     {
         return {
             count: 0,
-            squared: 5
+            squared: 5,
+            api: {}
         };
     },
     computed:
