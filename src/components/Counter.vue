@@ -19,7 +19,8 @@ export default
     {
         computed_counter()
         {
-            return this.squared * this.squared;
+            let result = parseInt( this.squared, 10 ) * parseInt( this.squared, 10 );
+            return isNaN(result) ? null : result;
         }
     },
     methods:

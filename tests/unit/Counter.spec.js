@@ -28,12 +28,14 @@ describe("Counter.vue", () =>
             { squared: 3, equal: 9 },
             { squared: 5, equal: 25 },
             { squared: 10, equal: 100 },
-            // { squared: 93, equal: 1924 }
+            { squared: "10", equal: 100 },
+            { squared: "Ninja", equal: null },
+            { squared: false, equal: null },
+            // { squared: 93, equal: 1924 } // wrong case
         ].map( el =>
         {
             wrapper.setData({ squared: el.squared });
             expect(wrapper.vm.computed_counter).to.equal(el.equal);
         });
-        
     });
 });
