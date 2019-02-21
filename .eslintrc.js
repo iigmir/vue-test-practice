@@ -14,7 +14,8 @@ module.exports = {
         "quotes": ["error", "double", {
             "avoidEscape": true,
             "allowTemplateLiterals": true,
-        }]
+        }],
+        "semi": ["error", "always"]
     },
     parserOptions: {
         parser: 'babel-eslint'

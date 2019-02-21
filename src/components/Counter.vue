@@ -12,14 +12,14 @@ export default
     {
         return {
             count: 0
-        }
+        };
     },
     methods:
     {
         increment()
         {
-            this.count++
+            this.count = this.count + 1;
         }
     }
-}
+};
 </script>
