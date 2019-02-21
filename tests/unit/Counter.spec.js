@@ -42,12 +42,31 @@ describe("Square part for Counter.vue", () =>
         });
     });
 
+    it("change_square should remain squared if input is not vaild number", () =>
+    {   // change_square should remain squared if input is not vaild number
+        [
+            "Ninja", false
+            // { squared: "10" },
+            // { squared: "Ninja" },
+            // { squared: false },
+        ].map( num =>
+        {
+            let component = wrapper.vm;
+            let old_value = 3;
+            wrapper.setData({ squared: old_value });
+            component.change_square(num);
+            expect(component.squared).to.equal(3);
+            expect(component.computed_squared).to.equal(9);
+        });
+    });
+
     it("change_square should change squared if input is vaild number", () =>
     {
         [
             { input: 3, output: 9 },
             { input: 5, output: 25 },
             { input: 10, output: 100 },
+            { input: "10", output: 100 },
         ].map( el =>
         {
             let component = wrapper.vm;

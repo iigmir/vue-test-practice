@@ -31,7 +31,11 @@ export default
         },
         change_square(input)
         {
-            this.squared = input;
+            let valid_number = isNaN( parseInt(input, 10) ) === false;
+            if(valid_number)
+            {
+                this.squared = input;
+            }
         }
     }
 };
