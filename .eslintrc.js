@@ -12,8 +12,8 @@ module.exports = {
         'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
         "indent": ["error", 4],
         "quotes": ["error", "double", {
-        "avoidEscape": true,
-        "allowTemplateLiterals": true,
+            "avoidEscape": true,
+            "allowTemplateLiterals": true,
         }]
     },
     parserOptions: {
