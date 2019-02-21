@@ -1,7 +1,7 @@
 <template>
     <div>
         <span class="count">{{ count }}</span>
-        <button v-bind:click="increment">Increment</button>
+        <button v-on:click="increment">Increment</button>
     </div>
 </template>
 
