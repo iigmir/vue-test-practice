@@ -4,10 +4,14 @@ import HelloWorld from '@/components/HelloWorld.vue'
 
 describe('HelloWorld.vue', () => {
   it('renders props.msg when passed', () => {
-    const msg = 'Hello World'
-    const wrapper = shallowMount(HelloWorld, {
-      propsData: { msg }
+    const msg_cases = ['Hello World','hi']
+    msg_cases.map( el =>
+    {
+      const wrapper = shallowMount(HelloWorld,
+      {
+        propsData: { msg: el }
+      })
+      expect(wrapper.text()).to.include(el)
     })
-    expect(wrapper.text()).to.include(msg)
   })
 })
