@@ -28,6 +28,10 @@ export default
         increment()
         {
             this.count = this.count + 1;
+        },
+        change_square(input)
+        {
+            this.squared = input;
         }
     }
 };

@@ -2,9 +2,8 @@ import { expect } from "chai";
 import { mount } from "@vue/test-utils";
 import Counter from "@/components/Counter.vue";
 
-describe("Counter.vue", () => 
+describe("Count part for Counter.vue", () => 
 {
-    // 现在挂载组件，你便得到了这个包裹器
     const wrapper = mount(Counter);
     it("Renders the correct markup", () =>
     {
@@ -21,7 +20,11 @@ describe("Counter.vue", () =>
         button.trigger("click");
         expect(wrapper.vm.count).to.equal(1);
     });
+});
 
+describe("Square part for Counter.vue", () => 
+{
+    const wrapper = mount(Counter);
     it("computed_squared should be square", () =>
     {
         [
@@ -39,20 +42,18 @@ describe("Counter.vue", () =>
         });
     });
 
-    it("computed_counter should be square", () =>
+    it("change_square should change squared if input is vaild number", () =>
     {
         [
-            { squared: 3, equal: 9 },
-            { squared: 5, equal: 25 },
-            { squared: 10, equal: 100 },
-            { squared: "10", equal: 100 },
-            { squared: "Ninja", equal: null },
-            { squared: false, equal: null },
-            // { squared: 93, equal: 1924 } // wrong case
+            { input: 3, output: 9 },
+            { input: 5, output: 25 },
+            { input: 10, output: 100 },
         ].map( el =>
         {
-            wrapper.setData({ squared: el.squared });
-            expect(wrapper.vm.computed_squared).to.equal(el.equal);
+            let component = wrapper.vm;
+            component.change_square(el.input);
+            expect(component.squared).to.equal(el.input);
+            expect(component.computed_squared).to.equal(el.output);
         });
     });
 });
