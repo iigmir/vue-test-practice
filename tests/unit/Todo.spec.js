@@ -10,24 +10,33 @@ describe("Actions for Todo.vue", () =>
         // chosen used for edit and delete
         chosen: false
     };
+    let component = wrapper.vm;
+    let todos = [
+        basic_architecture,
+        basic_architecture,
+        basic_architecture
+    ];
     it("Should have basic architecture", () =>
     {
-        let component = wrapper.vm;
-        let todos = [
-            basic_architecture,
-            basic_architecture,
-            basic_architecture
-        ];
-        wrapper.setData({ todos });
-        let inited_todos = component.todos;
-        // Data type
         let items_are_string = items => typeof(items.item) === "string";
-        
         let chosen_are_false = items => typeof(items.item) === "string";
+        let inited_todos = [];
+        wrapper.setData({ todos });
+        inited_todos = component.todos;
         expect( inited_todos.every( items_are_string ) ).to.equal( true );
         expect( inited_todos.every( chosen_are_false ) ).to.equal( true );
     });
-    it("Should add, edit, and delete", () =>
+    it("Should add", () =>
+    {
+        // let component = wrapper.vm;
+        // component.add_todo("");
+    });
+    it("Should edit", () =>
+    {
+        // let component = wrapper.vm;
+        // component.add_todo("");
+    });
+    it("Should delete", () =>
     {
         // let component = wrapper.vm;
         // component.add_todo("");
