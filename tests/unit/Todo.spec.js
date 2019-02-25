@@ -33,9 +33,18 @@ describe("Actions for Todo.vue", () =>
     it("Should add todo item", () =>
     {
         wrapper.setData({ todos: [] });
-        ["Write tests", "Watch anime", "Read books"].map( item => component.add_todo(item) );
+        [
+            "Write tests", // should add
+            "Watch anime", // should add
+            "Read books",  // should add
+            true,  // should add
+            false, // should add
+            "",    // should NOT add
+            123,   // should add
+            0      // should add
+        ].map( item => component.add_todo(item) );
         structure_okay();
-        expect(component.todos.length).to.equal(3);
+        expect(component.todos.length).to.equal(7);
     });
     it("Should edit", () =>
     {

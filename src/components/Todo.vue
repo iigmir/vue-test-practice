@@ -18,11 +18,19 @@ export default {
     {
         add_todo(item)
         {
-            let chosen = false;
-            let remantinting_object = { item, chosen };
+            if( String(item) === "" )
+            {
+                console.error("Illegal input");
+                return;
+            }
+            let remantinting_object = {
+                item: String(item),
+                chosen: false
+            };
             let todos = [...this.todos];
             todos.push(remantinting_object);
             this.todos = todos;
+            return;
         }
     }
 };
