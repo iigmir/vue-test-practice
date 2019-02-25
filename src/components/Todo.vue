@@ -47,6 +47,16 @@ export default {
             let todos = [...this.todos];
             todos[index].chosen = !todos[index].chosen;
             this.todos = todos;
+        },
+        delete_todos({ index })
+        {
+            let chosen_item = this.todos[index];
+            let todos = [...this.todos];
+            if(chosen_item.chosen === true)
+            {
+                todos.splice(index, 1);
+                this.todos = todos;
+            }
         }
     }
 };
