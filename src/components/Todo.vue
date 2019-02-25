@@ -1,7 +1,9 @@
 <template>
     <div>
         <ul>
-            <li></li>
+            <li v-for="(todo, index) in todos" :key="index">
+                {{ todo.item }}
+            </li>
         </ul>
     </div>
 </template>
@@ -11,7 +13,7 @@ export default {
     data()
     {
         return {
-            todos: []
+            todos: [{ item: "Do something", chosen: false }]
         };
     },
     methods:
