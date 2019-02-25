@@ -16,20 +16,26 @@ describe("Actions for Todo.vue", () =>
         basic_architecture,
         basic_architecture
     ];
-    it("Should have basic architecture", () =>
+    
+    let structure_okay = () =>
     {
+        let inited_todos = component.todos;
         let items_are_string = items => typeof(items.item) === "string";
-        let chosen_are_false = items => typeof(items.item) === "string";
-        let inited_todos = [];
-        wrapper.setData({ todos });
-        inited_todos = component.todos;
+        let chosen_are_false = items => items.chosen === false;
         expect( inited_todos.every( items_are_string ) ).to.equal( true );
         expect( inited_todos.every( chosen_are_false ) ).to.equal( true );
-    });
-    it("Should add", () =>
+    };
+    it("Should have basic architecture", () =>
     {
-        // let component = wrapper.vm;
-        // component.add_todo("");
+        wrapper.setData({ todos });
+        structure_okay();
+    });
+    it("Should add todo item", () =>
+    {
+        wrapper.setData({ todos: [] });
+        ["Write tests", "Watch anime", "Read books"].map( item => component.add_todo(item) );
+        structure_okay();
+        expect(component.todos.length).to.equal(3);
     });
     it("Should edit", () =>
     {
