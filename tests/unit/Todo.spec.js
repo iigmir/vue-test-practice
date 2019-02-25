@@ -98,11 +98,4 @@ describe("Actions for Todo.vue", () =>
         expect( component.todos.length ).to.equal(2);
         expect( component.todos[0].item ).to.equal("Rin");
     });
-    // it("Button click should increment the count", () =>
-    // {
-    //     const button = wrapper.find("button");
-    //     expect(wrapper.vm.count).to.equal(0);
-    //     button.trigger("click");
-    //     expect(wrapper.vm.count).to.equal(1);
-    // });
 });
