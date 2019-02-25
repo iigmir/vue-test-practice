@@ -22,3 +22,9 @@ Assume that `wrapper` means `mount(VueInstance)`:
 * How to run methods? Just like this: `wrapper.vm.method_need_to_test()`.
 
 ## Reference
+* [PHP與撰寫測試入門](http://blog.turn.tw/?p=2741)
+* [先寫單元測試的12個好處！](http://blog.turn.tw/?p=2821)
+* [Vue Test Utils](https://vue-test-utils.vuejs.org)
+* [大家寫JavaScript時會寫測試嗎？什麼樣的情況下應該要寫測試？](https://ithelp.ithome.com.tw/questions/10095443)
+* [怎么写好Javascript单元测试？](https://segmentfault.com/q/1010000000302939)
+* [对 JavaScript 进行单元测试的工具](https://www.ibm.com/developerworks/cn/web/wa-tools/)
